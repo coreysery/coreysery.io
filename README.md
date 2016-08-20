@@ -2,7 +2,7 @@
 
   What up, this is my personal site-- currently under development.
 
-## stack  
+## Stack  
   * Angular2
   * ES6
   * AWS

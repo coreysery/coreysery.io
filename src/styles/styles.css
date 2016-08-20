@@ -1,0 +1,12 @@
+/*
+ * This file is loaded outside without angular,
+ * so that it can affect styles out of the scope of the app
+*/
+
+* {
+  transition: all 300ms ease 0s;
+  font-family: monospace;
+}
+html, body, #home {
+  height: 100%;
+}

@@ -39,6 +39,7 @@
     "babel-preset-stage-0": "^6.5.0",
     "css-loader": "^0.23.1",
     "extract-text-webpack-plugin": "^1.0.1",
+    "file-loader": "^0.9.0",
     "html-loader": "^0.4.3",
     "html-webpack-plugin": "^2.22.0",
     "http-server": "^0.9.0",
@@ -66,7 +67,7 @@
     "serve": "http-server ./dist -p 9000 -c-1",
     "clean:dist": "rm -rf dist",
     "build": "npm run clean:dist; webpack --progress",
-    "watch": "webpack --watch",
+    "watch": "webpack --watch; browser-sync start;",
     "test": "karma start",
     "coverage": "http-server -c-1 -o -p 9875 ./coverage"
   }

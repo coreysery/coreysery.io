@@ -11,17 +11,17 @@ module.exports = {
     devtool: debug ? 'inline-sourcemap' : null,
     debug: debug,
     entry: {
-        'vendor.js': './src/vendor.js',
+        'vendor': './src/vendor.js',
         'app': './src/main.js'
     },
 
     resolve: {
-        extensions: ['', '.js', '.less', '.html', '.css'],
+        extensions: ['', '.js', '.less', '.html', '.css', '.jpg'],
     },
 
     output: {
         path: path.join(__dirname, "dist"),
-        filename: "[name].bundle.js"
+        filename: "scripts/[name].bundle.js"
     },
 
     module: {
@@ -32,18 +32,18 @@ module.exports = {
                 test: /\.js$/,
                 loaders: ['babel-loader', 'angular2-template-loader'],
                 exclude: /node_modules/,
-            },
-            {
+            }, {
                 test: /\.html$/,
                 loader: 'html'
-            },
-            {
+            }, {
                 test: /\.less$/,
                 loader: 'raw-loader!less-loader!autoprefixer'
-            },
-            {
+            }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer")
+            }, {
+                test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+                loader: "file?name=assets/[name].[ext]"
             }
         ]
     },
@@ -66,11 +66,11 @@ module.exports = {
         //new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),
 
         // Write out CSS bundle to its own file:
-        new ExtractTextPlugin('style.css', { allChunks: true }),
+        new ExtractTextPlugin('styles/[name].css', { allChunks: true }),
 
         // Automatically move all modules defined outside of application directory to vendor bundle.
         new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor.js']
+            name: ['app', 'vendor']
         }),
 
         new HtmlWebpackPlugin({

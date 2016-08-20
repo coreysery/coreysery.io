@@ -9,7 +9,7 @@ import { SocialService } from './socials/social.service';
     selector: 'coreyseryIOapp',
     templateUrl: './app.component.html',
     providers: [SocialService],
-    styles: ['', require('../styles/styles.less')],
+    styles: ['', require('./app.component.less')],
 })
 class AppComponent implements OnInit {
     constructor () {}

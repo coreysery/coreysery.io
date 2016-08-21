@@ -2,33 +2,27 @@
 
 export const socials = [
   {
-    name: 'github',
+    title: 'Github',
     link: 'https://github.com/armadill-odyssey',
-    color: 'purple',
-    icon: 'Github',
+    color: '#AB47BC',
+    icon: 'github',
   },
   {
-    name: 'stackoverflow',
+    title: 'Stack Overflow',
     link: 'http://stackoverflow.com/users/4276296/corey',
-    color: 'orange',
-    icon: 'Stack Overflow',
+    color: '#FFA726',
+    icon: 'stack-overflow',
   },
   {
-    name: 'linkedin',
+    title: 'LinkedIn',
     link: 'https://www.linkedin.com/in/coreysery',
-    color: 'blue',
-    icon: 'LinkedIn',
+    color: '#42A5F5',
+    icon: 'linkedin',
   },
   {
-    name: 'site',
-    link: 'http://www.coreysery.io/',
-    color: 'red',
-    icon: 'Personal Site',
-  },
-  {
-    name: 'email',
+    title: 'Email',
     link: 'mailto:corey@coreysery.io',
-    color: 'green',
-    icon: 'Email',
+    color: '#66BB6A',
+    icon: 'envelope',
   }
 ];

@@ -46,12 +46,10 @@ module.exports = {
             {
                 test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
                 loader: "file?name=/assets/[name].[ext]"
-            }
+            },
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
         ]
-    },
-
-    postcss: function () {
-      return ['less'];
     },
 
     htmlLoader: {
@@ -73,12 +71,6 @@ module.exports = {
 
         // Write out CSS bundle to its own file:
         new ExtractTextPlugin('styles/[name].css', { allChunks: true }),
-
-        // copy static assets
-        // new CopyWebpackPlugin([{
-        //   from: 'src/assets/**/*',
-        //   to: 'assets',
-        // }]);
 
         // Automatically move all modules defined outside of application directory to vendor bundle.
         new webpack.optimize.CommonsChunkPlugin({

@@ -9,9 +9,9 @@ import { SocialService } from './social.service';
   providers: [SocialService],
   template: `
     <div *ngFor="let social of socials" class="social-block"  [style.background-color]="social.color" >
-      <div title="{{social.name}}">
+      <div title="{{social.title}}">
         <a href="{{social.link}}" target="_blank">
-          {{social.icon}}
+          <i class="fa fa-{{social.icon}}" aria-hidden="true"></i>
         </a>
       </div>
     </div>

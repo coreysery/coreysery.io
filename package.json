@@ -55,7 +55,6 @@
     "less": "^2.7.1",
     "less-loader": "^2.2.3",
     "parallelshell": "^2.0.0",
-    "postcss-less": "^0.14.0",
     "raw-loader": "^0.5.1",
     "reflect-metadata": "^0.1.8",
     "remap-istanbul": "^0.6.4",

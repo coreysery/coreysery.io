@@ -39,7 +39,6 @@ module.exports = {
             }, {
                 test: /\.less$/,
                 loader: "raw-loader!autoprefixer!less",
-                // loader: 'postcss-less!raw-loader!less-loader!autoprefixer'
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer")

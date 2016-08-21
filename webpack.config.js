@@ -2,6 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 var debug = process.env.NODE_ENV !== 'production';
@@ -37,15 +38,21 @@ module.exports = {
                 loader: 'html'
             }, {
                 test: /\.less$/,
-                loader: 'raw-loader!less-loader!autoprefixer'
+                loader: "raw-loader!autoprefixer!less",
+                // loader: 'postcss-less!raw-loader!less-loader!autoprefixer'
             }, {
                 test: /\.css$/,
                 loader: ExtractTextPlugin.extract("style-loader", "css-loader!autoprefixer")
-            }, {
+            },
+            {
                 test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
-                loader: "file?name=assets/[name].[ext]"
+                loader: "file?name=/assets/[name].[ext]"
             }
         ]
+    },
+
+    postcss: function () {
+      return ['less'];
     },
 
     htmlLoader: {
@@ -67,6 +74,12 @@ module.exports = {
 
         // Write out CSS bundle to its own file:
         new ExtractTextPlugin('styles/[name].css', { allChunks: true }),
+
+        // copy static assets
+        // new CopyWebpackPlugin([{
+        //   from: 'src/assets/**/*',
+        //   to: 'assets',
+        // }]);
 
         // Automatically move all modules defined outside of application directory to vendor bundle.
         new webpack.optimize.CommonsChunkPlugin({

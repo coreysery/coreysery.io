@@ -1,23 +1,38 @@
 @black: #333;
 
+
+/* =========== All ==============*/
 * {
   color: @black;
+  select: none;
 }
 #home {
   position: relative;
 }
 .container {
-  padding:40px;
+  padding: 40px 60px;
   position: relative;
 }
+.no-select {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;
+}
+
+/* =========== Bio ==============*/
 social-blocks {
   position: absolute;
   bottom: 0;
   left:0;
   width: 100%;
+  .no-select;
 }
 hr {
   max-width: 10em;
+  margin: 20px auto;
+  border-color: #455A64;
+  .no-select;
 }
 #bio {
   width:60%;
@@ -26,17 +41,46 @@ hr {
   position: relative;
   text-align: center;
 }
+#babe {
+  margin: 0 auto;
+  position: relative;
+  display: block;
+  height: 15em;
+  width: 15em;
+  padding:6px;
+  border-radius: 50%;
+  border: 1px solid #424242;
+  .no-select;
+}
+#babe img {
+  height: 98%;
+  width: 98%;
+  border-radius: 50%;
+  border: 2px solid #424242;
+}
+h3 {
+  font-size: 24px;
+}
+p {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+/* =========== Pages ==============*/
 #pages {
   width:40%;
   display: inline-block;
   height:100%;
   right: 0;
   position: absolute;
+  box-shadow: -5px 0px 29px 0px rgba(0,0,0,.43);
+  .no-select;
 }
 #pages #dev,
 #pages #audio {
   height:50%;
   display: block;
+  transition: all 200ms ease 0s;
 }
 #pages div{
   height:100%;
@@ -50,7 +94,7 @@ hr {
   display: inline-block;
   top: 50%;
   text-align: center;
-  position: absolute;;
+  position: absolute;
   line-height: 0;
   left: 0;
   right: 0;
@@ -63,11 +107,13 @@ hr {
 #audio {
   background-color: #F44336;
 }
-#babe {
-  margin: 0 auto;
-  position: relative;
-  display: block;
-  height: 15em;
-  border-radius: 50%;
-  border: 3px solid #333;
+
+#pages a:hover {
+  height: 60% !important;
+}
+#pages a:hover ~ a{
+  height: 40% !important;
+}
+#pages:hover #dev{
+  height: 40%;
 }

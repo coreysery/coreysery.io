@@ -47,8 +47,8 @@ module.exports = {
                 test: /\.jpe?g$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
                 loader: "file?name=/assets/[name].[ext]"
             },
-            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff" },
-            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file-loader" }
+            { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&minetype=application/font-woff?name=/assets/[name].[ext]" },
+            { test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: "file?name=/assets/[name].[ext]" }
         ]
     },
 
@@ -68,6 +68,13 @@ module.exports = {
         new webpack.optimize.OccurenceOrderPlugin(),
         // Uglify
         //new webpack.optimize.UglifyJsPlugin({mangle: false, sourcemap: false}),
+
+        // Copy fonts
+        new CopyWebpackPlugin([{
+          from: 'src/assets/fonts/*',
+          to: 'assets/fonts',
+          flatten:true,
+        }]),
 
         // Write out CSS bundle to its own file:
         new ExtractTextPlugin('styles/[name].css', { allChunks: true }),

@@ -1,0 +1,52 @@
+.container {
+  max-width: 800px;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.project {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  * {
+    transition: all 200ms ease 0s;
+    -webkit-backface-visibility: hidden;
+  //  -webkit-transform: translateZ(0) scale(1.0, 1.0);
+  }
+
+  a.box {
+    position: relative;
+    overflow: hidden;
+    border: none !important;
+    box-shadow: none !important;
+
+    img {
+      position: relative;
+      padding: 15px;
+      height: 100px;
+      width: auto;
+    }
+
+    .title {
+      transform: translateY(25px);
+      position: absolute;
+      right:0;
+      left: 0;
+      color: #fff;
+    }
+
+    &:hover {
+      // transform: scale(1.1);
+
+      img {
+        position: relative;
+        transform: translateY(-20px);
+      }
+
+      .title {
+        transform: translateY(-30px);
+      }
+    }
+  }
+}

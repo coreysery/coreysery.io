@@ -1,4 +1,37 @@
-<h1>
-  {{title}}
-</h1>
-<router-outlet></router-outlet>
+
+<div class="container" >
+
+  <div class="box panel" >
+    <router-outlet></router-outlet>
+
+    <div class="tabs is-centered">
+      <ul>
+        <li routerLink="/" routerLinkActive="is-active" [routerLinkActiveOptions]="{exact:true}"><a>Home</a></li>
+        <li routerLink="/projects" routerLinkActive="is-active"><a>Projects</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+</div>
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <p>
+        Corey Sery
+      </p>
+
+      <ul>
+
+        <li>
+          <a class="icon" href="https://github.com/armadill-odyssey" target="_blank"><i class="fa fa-github"></i></a>
+        </li>
+        
+        <li>
+          <a class="icon" href="mailto:corey@coreysery.io"><i class="fa fa-envelope"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>

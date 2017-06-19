@@ -1,35 +1,4 @@
 
-footer {
-  position: absolute;
-  left: 0;
-  right:0;
-  bottom: 0;
-  background: none;
-  padding:0;
-
-  ul {
-    list-style: none;
-    padding: 0;
-
-    li {
-      display: inline-block;
-      margin: 0 10px;
-
-      a {
-        padding: 10px;
-        i {
-          font-size: 28px;
-          color: #fff;
-        }
-      }
-    }
-  }
-}
-
-.tabs a, .tabs li {
-  outline: none !important;
-}
-
 
 .container {
   position: relative;
@@ -40,13 +9,11 @@ footer {
 .panel {
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
+  top: 40%;
+  transform: translateY(-50%);
   max-width: 600px;
-  box-shadow: none !important;
-
-  @media (min-width: 600px) {
-    margin-top: 5%;
-  }
+  max-height: 600px;
+  overflow-y: scroll;
 }
 
 .tabs ul {
@@ -71,7 +38,7 @@ hr {
   left: -3em;
   width: calc(100% + 6em);
   height: 1px;
-  z-index: -1;
+  // z-index: -1;
   background: #c8cccf;
   border-color: #c8cccf;
   margin: 0;
@@ -83,15 +50,37 @@ hr {
 
   img {
     box-shadow: 0 0 0 1.5em #ffffff;
-    background: #EF9A9A;
-    border: 1px solid darken(#EF9A9A, 10%);
+    // background: #EF9A9A;
+    // border: 1px solid darken(#EF9A9A, 10%);
     border-radius: 50%;
     display: inline-block;
     height: 150px;
     width: 150px;
+    position: relative;
+z-index: 999;
   }
 }
 
 h2.title {
   margin-bottom: 10px;
 }
+
+
+//
+// .jobs {
+//
+//   li {
+//     list-style: none;
+//     display: inline;
+//     white-space: pre;
+//   }
+//
+//   li:after {
+//     // content: " \00b7 ";
+//     content: "";
+//     width: 5px;
+//     height: 5px;
+//     color: #c8cccf;
+//     // font-size: 24px;
+//   }
+// }

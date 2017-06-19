@@ -1,0 +1,36 @@
+
+<header>
+  <div class="">
+
+    <h1 class="title is-2">Projects</h1>
+
+  </div>
+
+  <hr />
+</header>
+
+
+<div class="spacer has-text-centered">
+
+  <div class="columns is-multiline">
+    <ng-container *ngFor="let proj of projects">
+      <div class="project column is-4">
+        <a class="box"
+          [href]="proj.url"
+          target="_blank"
+          [ngStyle]="{'background': proj.background}">
+
+          <img [src]="proj.icon" width="100"  height="100" />
+
+          <h4 class="title is-5">{{proj.title}}</h4>
+          <!-- <h5 class="subtitle is-6">{{proj.subtitle}}</h5> -->
+
+        </a>
+
+      </div>
+    </ng-container>
+
+  </div>
+
+
+</div>
